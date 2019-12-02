@@ -9,7 +9,7 @@ num = int(numstring)
 ls = gen.username(num)
 
 count = 0
-with open('data.txt', 'w+') as f:
+with open('data.json', 'w+') as f:
     f.write('[')
     
     for username in ls:
