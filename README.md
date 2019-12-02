@@ -11,7 +11,7 @@ password
 create_time
 last_update
 
-# Originally forked from https://github.com/williexu/random_username
+## Originally forked from https://github.com/williexu/random_username
 # Uses lists from:
 https://github.com/williexu/random_username
 https://github.com/dominictarr/random-name
