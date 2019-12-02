@@ -13,7 +13,7 @@ Generates random user data in json style formatting. Just run dataGenDiekhoff.py
 
 
 # Uses lists from:
-https://github.com/williexu/random_username
-https://github.com/dominictarr/random-name
-https://github.com/arineng/arincli/tree/master/lib
-https://gist.github.com/tbrianjones/5992856/
+- https://github.com/williexu/random_username
+- https://github.com/dominictarr/random-name
+- https://github.com/arineng/arincli/tree/master/lib
+- https://gist.github.com/tbrianjones/5992856/
