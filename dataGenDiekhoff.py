@@ -1,61 +1,42 @@
 import generate as gen
 import re
-
+import json
 
 numstring = input("Enter the number of users you want to generate: ")
 num = int(numstring)
 
-
 ls = gen.username(num)
 
-count = 0
-with open('data.json', 'w+') as f:
-    f.write('[')
-    
-    for username in ls:
-        # User ID
-        f.write('{\"user_id\":' + str(count + 1) + ',')
-        count += 1
+count = 1
+with open('data.json', 'w+') as file:
+    data = []
 
-        # Email
-        f.write('\"email\":')
+    for username in ls:
         firstEmail = username[0]
         secondEmail = re.findall ('[A-Z][^A-Z]*', username)
         dom = gen.emailDomain()
-        f.write('\"' + firstEmail + '.' + secondEmail[0] + dom +'\",')
-
-        # Username
-        f.write('\"username\":')
-        f.write('\"' + username + '\",')
-        
-        # First name
-        f.write('\"first_name\":')
+        email = str(firstEmail) + "." + str(secondEmail[0]) + str(dom)
         fName = gen.firstName()
-        f.write(fName)
-
-        # Last name
-        f.write('\"last_name\":')
         lName = gen.lastName()
-        f.write(lName)
-
-        # Password
-        f.write('\"password\":')
         password = gen.password()
-        f.write(password)
-
-        # Create time
-        f.write('\"create_time\":')
         date = gen.createTime()
         createTime = date.date()
-        f.write('\"' + str(createTime) + '\",')
-
-        # Last update time
-        f.write('\"last_update\":')
         lastUpdate = gen.lastUpdate(date)
-        f.write(lastUpdate)
         
-        # Formatting
-        if count < num:
-            f.write('},\n')
-        else:
-            f.write('}]')
+
+        data.append({
+            'user_id': count,
+            'email': email,
+            'username': username,
+            'first_name': fName,
+            'last_name': lName,
+            'password': password,
+            'create_time': str(createTime),
+            'last_update': str(lastUpdate)
+             })
+        
+        count += 1
+    json.dump(data,file,indent=4)
+    
+
+

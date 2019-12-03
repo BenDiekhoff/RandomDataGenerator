@@ -4,7 +4,6 @@ import string
 from datetime import datetime, timedelta
 from random import randrange
 
-
 directory_path = os.path.dirname(__file__)
 
 # Usernames
@@ -38,7 +37,6 @@ def emailDomain():
 def firstName():
     with open(os.path.join(directory_path, 'data', 'firstNames.txt'), 'r') as file_fNames:
         name = random.choice(file_fNames.read().splitlines())
-        name = '\"' + name + '\",'
 
     return name
 
@@ -46,38 +44,17 @@ def firstName():
 def lastName():
     with open(os.path.join(directory_path, 'data', 'lastNames.txt'), 'r') as file_lNames:
         name = random.choice(file_lNames.read().splitlines())
-        name = '\"' + name + '\",'
 
     return name
 
 # Passwords
 def password(length = 11):
-    chars = string.ascii_letters + string.digits + string.punctuation
+    chars = string.ascii_letters + string.digits # + string.punctuation
     pw = ''
     for i in range(length):
         pw += pw.join(random.choice(chars))
-    pwd = '\"' + pw + '\",'
-    
-    return pwd
 
-# def date():
-#     jan = (1,31)
-#     feb = (2,28) #(2,29)
-#     mar = (3,31)
-#     apr = (4,30)
-#     may = (5,31)
-#     jun = (6,30)
-#     jul = (7,31)
-#     aug = (8,31)
-#     sep = (9,30)
-#     octo = (10,31)
-#     nov = (11,30)
-#     dec = (12, 31)
-     
-#     oldest = datetime.date(1903, 1, 2)
-#     newest = datetime.date.today()
-#     timerange = datetime.date.fromtimestamp(oldest)
-#     print(timerange)
+    return pw
 
 # Creation times
 def createTime():
@@ -87,7 +64,7 @@ def createTime():
     dateRange = (delta.days)
     randomDays = randrange(dateRange)    
     date = oldest + timedelta(days=randomDays)
-    #date = date.date()
+
     return date
 
 # Last update times
@@ -98,6 +75,5 @@ def lastUpdate(oldest = datetime.strptime('1/1/1983', '%m/%d/%Y')):
     randomDays = randrange(dateRange)    
     date = oldest + timedelta(days=randomDays)
     date = date.date()
-    date = '\"' + str(date) + '\"'
-    #print(date)
+
     return date

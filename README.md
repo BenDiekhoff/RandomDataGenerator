@@ -11,7 +11,6 @@ Generates random user data in a json file. Just run dataGenDiekhoff.py and type 
 - create_time
 - last_update
 
-
 # Uses lists from:
 - https://github.com/williexu/random_username
 - https://github.com/dominictarr/random-name
