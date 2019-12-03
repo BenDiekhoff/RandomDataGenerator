@@ -1,5 +1,7 @@
 # RandomDataGenerator
-Generates random user data in a json file. Just run dataGenDiekhoff.py and type in the number of users you want to create records for.  Originally forked from https://github.com/williexu/random_username
+Generates random user data in a csv or json file.  
+Run ```dataGenDiekhoff.py <file type> <number of users to generate>```  
+from the command line, where `<file type>` is either 'csv' or 'json' 
 
 # Data
 - user_id
@@ -10,6 +12,9 @@ Generates random user data in a json file. Just run dataGenDiekhoff.py and type 
 - password
 - create_time
 - last_update
+
+# Originally forked from
+https://github.com/williexu/random_username
 
 # Uses lists from:
 - https://github.com/williexu/random_username
