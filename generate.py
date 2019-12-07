@@ -58,7 +58,7 @@ def password(length = 11):
 
 # Creation times
 def createTime():
-    oldest = datetime.strptime('1/1/1983', '%m/%d/%Y')
+    oldest = datetime.strptime('1/1/2009', '%m/%d/%Y')
     newest= datetime.strptime('12/31/2019', '%m/%d/%Y')
     delta = newest - oldest
     dateRange = (delta.days)
@@ -68,7 +68,7 @@ def createTime():
     return date
 
 # Last update times
-def lastUpdate(oldest = datetime.strptime('1/1/1983', '%m/%d/%Y')):
+def lastUpdate(oldest = datetime.strptime('1/1/2009', '%m/%d/%Y')):
     newest= datetime.strptime('12/31/2019', '%m/%d/%Y')
     delta = newest - oldest
     dateRange = (delta.days)
@@ -77,3 +77,11 @@ def lastUpdate(oldest = datetime.strptime('1/1/1983', '%m/%d/%Y')):
     date = date.date()
 
     return date
+
+def ageList():
+     with open(os.path.join(directory_path, 'data', 'ages.txt'), 'r') as file_ages:
+        lines = file_ages.readlines()
+
+        return lines
+
+    

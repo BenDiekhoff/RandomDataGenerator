@@ -5,6 +5,7 @@ import re
 import json
 import csv
 import generate as gen
+import random
 
 # Uncomment the block below to make the program prompt your for input
 ##############################################################################
@@ -35,8 +36,9 @@ def csvFile():
     with open('data.csv', 'w+', newline='') as file:
         write = csv.writer(file)
         write.writerow(['user_id', 'email', 'username', 'first_name',
-            'last_name', 'password', 'create_time', 'last_update'])
+            'last_name', 'password', 'create_time', 'last_update', 'age'])
 
+        ageList = gen.ageList()
         for username in ls:
             firstEmail = username[0]
             secondEmail = re.findall ('[A-Z][^A-Z]*', username)
@@ -48,10 +50,13 @@ def csvFile():
             date = gen.createTime()
             createTime = date.date()
             lastUpdate = gen.lastUpdate(date)
+            age = random.choice(ageList)
+            ageList.remove(age)
+
 
             write.writerow([str(count), email,
             str(username), fName, lName, password, 
-            str(createTime), lastUpdate])
+            str(createTime), lastUpdate, int(age)])
             count += 1
 
 
@@ -61,7 +66,7 @@ def jsonFile():
     count = 1
     data = []
     with open('data.json', 'w+') as file:
-        
+        ageList = gen.ageList()
         for username in ls:
             firstEmail = username[0]
             secondEmail = re.findall ('[A-Z][^A-Z]*', username)
@@ -73,6 +78,8 @@ def jsonFile():
             date = gen.createTime()
             createTime = date.date()
             lastUpdate = gen.lastUpdate(date)
+            age = random.choice(ageList)
+            ageList.remove(age)
 
             data.append({
                 'user_id': count,
@@ -82,7 +89,8 @@ def jsonFile():
                 'last_name': lName,
                 'password': password,
                 'create_time': str(createTime),
-                'last_update': str(lastUpdate)
+                'last_update': str(lastUpdate),
+                'age': int(age)
                 })
     
             count += 1
