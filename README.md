@@ -1,12 +1,11 @@
 # RandomDataGenerator
-Generates random user data in a csv or json file.  
+Generates random user data (ideally 1000+ users) in a csv or json file.  
 Run ```dataGenDiekhoff.py <file type> <number of users to generate>```  
 from the command line, where `<file type>` is either 'csv' or 'json'  
 
-## For some related programs, see my other repo ![here](https://github.com/BenDiekhoff/5303-DB-Diekhoff/tree/master/A09)
 
 # Mac or Linux users
-remove `, newline= ''` from line 35 in dataGenDiekhoff.py.  
+remove `, newline= ''` from line 36 in dataGenDiekhoff.py.  
 This prevents Windows from inserting a blank line between entries.
 
 # Data
@@ -18,7 +17,7 @@ This prevents Windows from inserting a blank line between entries.
 - password
 - create_time
 - last_update
-- age
+- ages (the distribution can be adjusted in generate.py)
 
 # Originally forked from
 https://github.com/williexu/random_username

@@ -32,7 +32,7 @@ num = int(args.num[0])
 
 def csvFile():
     ls = gen.username(num)
-    count = 1
+    count = 0
     with open('data.csv', 'w+', newline='') as file:
         write = csv.writer(file)
         write.writerow(['user_id', 'email', 'username', 'first_name',
@@ -63,7 +63,7 @@ def csvFile():
 
 def jsonFile():
     ls = gen.username(num)
-    count = 1
+    count = 0
     data = []
     with open('data.json', 'w+') as file:
         ageList = gen.ageList(num)
@@ -80,7 +80,7 @@ def jsonFile():
             lastUpdate = gen.lastUpdate(date)
             age = random.choice(ageList)
             ageList.remove(age)
-
+			
             data.append({
                 'user_id': count,
                 'email': email,
@@ -94,8 +94,9 @@ def jsonFile():
                 })
     
             count += 1
-        json.dump(data, file) #, indent=4) 
+            json.dump(data, file) #, indent=4) 
         # indent=4 gives the file pretty formatting but uses many more lines
+
 
 
 if filetype == 'csv': 

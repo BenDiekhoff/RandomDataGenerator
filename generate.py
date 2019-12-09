@@ -51,7 +51,7 @@ def lastName():
 
 # Passwords
 def password(length = 11):
-    chars = string.ascii_letters + string.digits # + string.punctuation
+    chars = string.ascii_letters + string.digits 
     pw = ''
     for i in range(length):
         pw += pw.join(random.choice(chars))
@@ -83,14 +83,14 @@ def lastUpdate(oldest = datetime.strptime('1/1/2009', '%m/%d/%Y')):
 def ageList(POPULATION):
     #age = os.path.dirname(__file__) + '/ages.txt'
 
-    AGES = [17,24,34,44,54,64,116]
-    RANGES = [(13,17),(18,24),(25,34),(35,44),(45,54),(55,64),(65,116)]
-    PER = [.058,.25,.322,.165,.102,.06,.043] # added 0.002 to index 2 this to make the total 100%
+    RANGES = [(13,17),(18,24),(25,34),(35,44),(45,54),(55,64),(65,116)] # min, max age for each age group
+	AGES = len(RANGES) # number of age groups
+    DIST = [.058,.25,.322,.165,.102,.06,.043] # distribution of the age groups
 
     agelist = []
 
-    for i in range (len(AGES)):
-        for x in range (int(POPULATION * PER[i])):
+    for i in range (AGES):
+        for x in range (math.ceil(POPULATION * DIST[i])):
             agelist.append(random.randint(RANGES[i][0], RANGES[i][1]))
     
 
