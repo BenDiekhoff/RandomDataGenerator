@@ -38,7 +38,7 @@ def csvFile():
         write.writerow(['user_id', 'email', 'username', 'first_name',
             'last_name', 'password', 'create_time', 'last_update', 'age'])
 
-        ageList = gen.ageList()
+        ageList = gen.ageList(num)
         for username in ls:
             firstEmail = username[0]
             secondEmail = re.findall ('[A-Z][^A-Z]*', username)
@@ -66,7 +66,7 @@ def jsonFile():
     count = 1
     data = []
     with open('data.json', 'w+') as file:
-        ageList = gen.ageList()
+        ageList = gen.ageList(num)
         for username in ls:
             firstEmail = username[0]
             secondEmail = re.findall ('[A-Z][^A-Z]*', username)
