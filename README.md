@@ -16,6 +16,7 @@ This prevents Windows from inserting a blank line between entries.
 - password
 - create_time
 - last_update
+- age
 
 # Originally forked from
 https://github.com/williexu/random_username
