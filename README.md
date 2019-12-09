@@ -3,6 +3,10 @@ Generates random user data (ideally 1000+ users) in a csv or json file.
 Run ```dataGenDiekhoff.py <file type> <number of users to generate>```  
 from the command line, where `<file type>` is either 'csv' or 'json'  
 
+# Semi-related scripts
+This started as a school project to generate data for a social network.  
+There are some standalone scripts on ![my schoool repo](https://github.com/BenDiekhoff/5303-DB-Diekhoff/tree/master/A09) that may be relevant.
+
 
 # Mac or Linux users
 remove `, newline= ''` from line 36 in dataGenDiekhoff.py.  
