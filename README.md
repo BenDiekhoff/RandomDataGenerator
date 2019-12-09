@@ -7,6 +7,8 @@ from the command line, where `<file type>` is either 'csv' or 'json'
 remove `, newline= ''` from line 35 in dataGenDiekhoff.py.  
 This prevents Windows from inserting a blank line between entries.
 
+# For some related programs, see my other repo ![here]https://github.com/BenDiekhoff/5303-DB-Diekhoff/tree/master/A09
+
 # Data
 - user_id
 - email
