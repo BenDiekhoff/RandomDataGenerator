@@ -58,3 +58,4 @@ target/
 
 # My data files
 data.*
+output/
